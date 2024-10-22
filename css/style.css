@@ -1,0 +1,1515 @@
+/* Reset Rule */
+* 
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+/* variable to store color code by using this variable we can
+   use that color at any place in the file [-- work as keyword 
+   and next we gave variable name in which we store the code ]*/
+
+              /* Method to copy color code */
+/* if we want to copy color from any website for using that color
+   in our web or project than :-
+
+   => we go to browser of that website than we click right button and 
+   => than click at the inspect and and than after selecting style
+   => in style.element we give any color name in parathesis like 
+   => we give in css than the box of that color show with the
+   => name and we click double at that box we click at the eye dropper
+   => after selecting that we move to the browser of that file from which we
+   => want to copy color and click at that color after clicking at that color
+   => the code of that's color shows in the style file from we select the dropper
+   => bellow that dropper symbol and before the HAX we copy that code and paste it
+   => in the file in which we want to use that color and store it in any variable
+   => e.g at below and we can use it at any place of that file */
+:root
+{
+  --primary-color: #14b789;
+  --sec-color: #535da1;
+  --ter-color: #000;
+  --q-color: #fff;
+}
+body
+{
+  height: 200vh;
+  overflow-x: hidden;
+}
+
+/* overflow-x: hidden;  =>  property use to hide the flow of any
+   anything in x-axis => mtlab k koi bhi content jo k apny parent 
+   ki width sy bahir ki traf move kr raha ho us ko hide krny k liye 
+   is sy wo apny parent ki width mein hi rehta hy  */
+
+            /*----------   header    ------------*/
+.header
+{
+  height: 110vh;
+  width: 100%;
+  padding: 10px ;
+  background-color: var(--primary-color);
+  transition: all 0.7s;
+}
+.header:hover
+{
+  background-color: var(--sec-color);
+}
+
+/* position absolute => we used it at a content if we
+   want to show that at the front of all contents means
+   agr hum is position ko kisi content pr apply krty hy
+   to humy sirf wohi show hota hy browser mein baki us 
+   content k pechy chly jaty hein [hide ho jaty hy] lakin 
+   agr hum scroll kary to wo humy body ki height mein kahi
+   pr zror show hoty hy us content ki height khatm hony k
+   baad jis pr hum ny position absolute use ki ho  */
+.header-overlay
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 90vh;
+    z-index: 1;
+    /* border-color: var(--sec-color); */
+}
+
+      /* --------------- navfixed class used in java ------------------ */
+.navfixed
+{
+  background: var(--q-color);
+  position: fixed;
+  left: 7%;
+  z-index: 3;
+  transition: all 0.5s;
+}
+.navfixed h1
+{
+  color: var(--primary-color);
+}
+.navfixed .navbar a,
+.navfixed i
+{
+  color: var(--sec-color);
+}
+.navfixed .contact i
+{
+  color: var(--q-color);
+  background-color: var(--primary-color);
+}
+.navfixed .contact a
+{
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* we appply position absolute at both nav and header-overlay but
+   header-overlay content show behind the nav because nav and
+   navfixed have value of z-index grater than the value of 
+   header-overlay nav and navfixed have same value of z-index
+   because we want to show both at the first*/
+
+/* if we don't use position fixed at navfixed than the out put is also same */
+
+                /* --------------------- nav ------------------------ */
+   nav 
+{
+  width: 87%;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 3;
+  left: 7%;
+  font-style: italic;
+}
+
+nav h1
+{
+  font-weight: 500;
+  font-size: 30px;
+  color: var(--q-color);
+  transition: all 0.5s;
+}
+.navbar 
+{
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-weight: 500;
+}
+
+.navbar a
+ {
+  color: var(--q-color);
+  position: relative;
+  transition: all 0.4s;
+}
+.navbar a:hover
+{
+  color: var(--primary-color);
+}
+
+/* content: ""; => if we do not want to write any anything
+
+   content: "red"; => property which is used to write something
+                   before the contents of all a tags like if 
+                   we want to write red 
+
+   position: absolute => use to show color or content if we 
+                         write something at the first
+                         
+   bottom => property used to apply gap between the color line and content
+             and show line at the bottom of content
+   height => use to control height valuer */
+.navbar a::before
+{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all 0.3s; 
+}
+
+/* width => property used to show undrline as we hover at the contents */
+.navbar a:hover::before
+{
+   width: 100%;
+}
+.contact 
+{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact i
+{
+  color: var(--sec-color);
+  background-color: var(--q-color);
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+/* .contact i:hover
+{
+   color: var(--primary-color);
+   background-color: var(--sec-color);
+} */
+.contact a 
+{
+  border: 2px solid var(--q-color);
+  color: var(--q-color);
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 0.7s;
+}
+.contact a:hover
+{
+  background-color: var(--q-color);
+  color: var(--primary-color);
+}
+
+             /* -------------------- section ----------------------------- */
+section
+{
+  display: flex;
+  height: 100%;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  margin: auto; 
+  z-index: 2;
+  gap: 20px;
+  position: relative;
+}
+.content .image
+{
+  width: 50%;
+  flex-grow: 1;
+  position: absolute;
+}
+.content
+{
+  margin-left: 20px;
+  margin-top: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 30px;
+  font-style: italic;
+}
+.content h1
+{
+  background-color:var(--sec-color) ;
+  color: white;
+  padding: 7px 15px;
+  border-radius: 7px;
+  font-size: 40px;
+  transition: all 0.9s;
+}
+.content h1:hover
+{
+  background-color: var(--q-color) ;
+  color: var(--sec-color);
+}
+.content p
+{
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-right: 25px;
+  transition: all 0.5s;
+}
+.content p:hover
+{
+  text-shadow: 2px 2px 1px var(--sec-color);
+}
+.content a
+{
+  font-size: 30px;
+  padding: 5px 12px;
+  border-radius: 7px;
+  margin-left: 330px;
+  border: 2px solid var(--sec-color);
+  color: var(--q-color);
+  background-color: var(--sec-color);
+  transition: all 0.5s;
+}
+.content a:hover
+{
+  color: var(--q-color);
+  border-color: var(--q-color);
+  background-color: transparent;
+}
+.image 
+{
+  margin-top: 120px;
+  margin-right: 16px;
+  height: 65vh;
+  width: 65%;  
+  border-radius: 100%;
+  overflow: hidden;
+}
+               /* -----------------About--------------------- */
+.about
+{
+    /* border: solid 1px; */
+    display: flex;
+    height: 120vh; 
+    margin: 110px auto;
+    gap: 40px;
+}
+            /* -------------------about left class--------------- */
+.left 
+{
+    width: 50%;
+    padding-left: 40px;
+}
+.left img
+{
+    height: 70vh;
+    width: 450px;
+    border-radius: 5%;
+} 
+                /* ------------------about right class------------------*/
+.right
+{
+    width: 50%;
+    gap: 20px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+} 
+.right .right-top
+{
+    display: flex;
+    height: 70vh;
+    gap: 10px;
+    justify-content: end;
+    align-items: center;
+    padding-right: 30px;
+    border-radius: 20px;
+    background-color: var(--sec-color);
+    color: var(--q-color);
+    transition: all 0.4s;
+}
+.right .right-top:hover
+{
+    background-color: var(--primary-color);
+}
+.right-top img
+{
+    height: 192px;
+    width: 192px;
+    border-radius: 50%;
+    padding: 5px;
+}
+.right-top h1
+{
+    padding-right: 15px;
+    font-size: 40px;
+    font-style: oblique;
+}
+.right h2
+{
+    /* margin-top: 5px; */
+    font-size: 30px;
+    font-style: italic;
+    width: fit-content;
+    color: var(--sec-color);
+    transition: all 0.5s;
+    padding: 5px 10px;
+}
+.right h2:hover
+{
+    background-color: whitesmoke;
+    color: var(--primary-color);
+}
+.right p
+{
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.6;
+    /* margin-top: 3px ; */
+    text-align: justify;
+    color: var(--sec-color);
+    transition: all 0.5s;
+    padding: 5px;
+}
+.right p:hover
+{
+    background-color: whitesmoke;
+    color: var(--primary-color);
+}
+               /* -----------------------tab------------------------- */
+.tab
+{
+    height: 80vh;
+    width: 99.5%;
+    display: flex;
+    gap: 60px;
+    /* margin: 10px auto; */
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: whitesmoke ;
+    border-top:  2px solid rgb(223, 217, 217);;
+    /* border-left: 2px solid rgb(223, 217, 217);
+    border-right: 2px solid rgb(223, 217, 217); */
+
+}
+              /* -------------------tab left class --------------------*/
+.left-tab table
+{
+    /* margin-top: 15px;
+    margin-left: 10px; */
+    width: 70%;
+    border: 2px solid rgb(223, 217, 217);
+    border-radius: 10px;
+}
+
+/* .left-tab .row
+{
+    display: flex;
+    flex-direction: column;
+} */
+table,th,td
+{
+       border: 2px solid rgb(223, 217, 217);
+       border-collapse: collapse;
+       height: 10vh;
+       padding: 15px;
+       font-style: oblique;
+}
+.t-heading 
+{
+    font-size: 30px;
+    font-style: italic;
+    color: var(--sec-color);
+}
+.t-main
+{
+    color: seagreen; 
+    font-size: 20px;
+}
+td
+{
+     color: var(--sec-color);
+     font-size: 20px;
+}
+                  /*-------------------tab right class----------------- */
+.right-tab
+{
+    display: grid;
+    /* margin-top: 10px; */
+    height: 55vh;
+    width: 50%;
+     grid-template-areas: "box1 box2"
+                          "box3 box4"; 
+}
+.box1
+{
+     grid-area: box1;
+     border-right: 1px solid;
+     border-color: rgb(216, 226, 235);
+}
+.box2
+{
+    grid-area: box2; 
+    border-bottom: 1px solid;
+    border-color: rgb(216, 226, 235);
+}
+.box3
+{
+    grid-area: box3;
+    border-top: 1px solid;
+    border-color: rgb(216, 226, 235);
+}
+.box4
+{
+    grid-area: box4;
+    border-left: 1px solid;
+    border-color: rgb(216, 226, 235);
+}
+.right-tab h1
+{
+    color: var(--primary-color);
+    font-size: 50px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.right-tab h1:hover
+{
+    color: var(--sec-color);   
+}
+.right-tab p
+{
+    color: var(--sec-color);
+    font-size: 25px;
+    font-style: italic;
+    padding-left: 20px;
+    transition: all 0.3s;
+}
+.right-tab p:hover
+{
+    color: var(--primary-color);
+} 
+                      /* -----------------services------------------------ */
+.ser
+{
+    background-color:  whitesmoke;
+    /* border-top: 2px solid;
+    border-bottom: 2px solid; */
+    border-color: rgb(206, 211, 215);
+    width: 99.5%;
+    height: 70vh;
+    /* margin-top: 10px; */
+}
+.se
+{
+    /* border: 2px solid; */
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 120px;
+    background-color: var(--sec-color);
+    color: var(--q-color);
+    height: 35vh;
+    width: 65%;
+    transition: all 0.7s;
+}
+.se:hover
+{
+    color: var(--sec-color);
+    background-color: var(--primary-color);
+}
+.se img
+{
+    height: 160px;
+    width: 200px;
+    border-radius: 10px;
+}
+.se h1
+{
+    font-style: italic;
+    font-size: 48px;
+    margin-top: 20px;
+}
+                   /*----------------aside--------------------  */
+aside
+{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  height: 210vh;
+  width: 100%;
+  background-color: whitesmoke;
+  border-bottom: 2px solid rgb(202, 201, 201);
+} 
+.lef
+{
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  width: 50%;
+} 
+.lef .lef-t
+{
+  /* border: 2px solid; */
+  border-radius: 10px;
+  height: 93vh;
+  margin-top: 80px;
+  background-color: gainsboro;
+} 
+.lef .lef-t .top
+{
+  border-bottom: 2px solid;
+  border-color: gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0px 40px;
+  padding: 20px 0px;
+}
+.lef .lef-t .top h1
+{
+  font-size: 30px;
+  color: var(--sec-color);
+  font-style: italic;
+}
+.lef .lef-t:hover .top h1
+{
+  color: var(--primary-color);
+}
+.lef .lef-t .top button
+{
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+  font-style: italic;
+  transition: all 0.5s;
+}
+.lef .lef-t:hover .top button
+{
+   background-color: var(--sec-color);
+}
+.lef .lef-t .cen
+{
+   display: flex;
+   flex-direction: column;
+   margin: 20px 40px ;
+}
+.lef .lef-t .cen p
+{
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: grey;
+}
+.lef .lef-t .cen button
+{
+      margin-top: 20px;
+      padding: 18px;
+      margin-left: 40%;
+      font-size: 20px;
+      font-style: italic;
+      width: 50%;
+      border-radius: 20px;
+      color: var(--q-color);
+      background-color:var(--primary-color);
+      transition: all ease 0.5s;
+}
+.lef .lef-t .cen button:hover
+{
+      background-color: var(--sec-color);
+      color: var(--q-color);
+}
+.lef .lef-t .bot
+{
+      /* border: 2px solid; */
+      height: 36.5vh;
+      width: 400px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+}
+.lef .lef-t .bot i
+{
+      position: absolute;
+      border: 2px solid;
+      border-radius: 5px;
+      border-color: rgb(181, 179, 179);
+      color: rgb(181, 177, 177);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      width: 250px;
+      bottom: -35px;
+      left: -20px;
+      transform: rotate(-64deg);
+      transition: all ease 0.5s;
+}
+.lef .lef-t:hover i
+{
+  background-color: var(--sec-color);
+  border-color: var(--sec-color);
+  color: var(--q-color);
+}
+
+
+.lef .lef-b
+{
+  /* border: 2px solid;
+  border-color: white; */
+  border-radius: 10px;
+  height: 93.3vh;
+  margin-top: 20px;
+  background-color: gainsboro;
+} 
+.lef .lef-b .l-top
+{
+  border-bottom: 2px solid;
+  border-color: gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0px 40px;
+  padding: 20px 0px;
+}
+.lef .lef-b .l-top h1
+{
+  font-size: 30px;
+  color: var(--sec-color);
+  font-style: italic;
+  transition: all ease 0.5s;
+}
+.lef .lef-b:hover .l-top h1
+{
+  color: var(--primary-color);
+}
+.lef .lef-b .l-top button
+{
+  padding: 10px 25px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+  font-style: italic;
+  transition: all ease 0.5s;
+}
+.lef .lef-b:hover .l-top button
+{
+  background-color: var(--sec-color);
+}
+.lef .lef-b .l-cen
+{
+   display: flex;
+   flex-direction: column;
+   margin: 20px 40px ;
+}
+.lef .lef-b .l-cen p
+{
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: grey;
+}
+.lef .lef-b .l-cen button
+{
+      margin-top: 20px;
+      padding: 18px;
+      margin-left: 40%;
+      font-size: 20px;
+      font-style: italic;
+      width: 50%;
+      border-radius: 20px;
+      color: var(--q-color);
+      background-color:var(--primary-color);
+      transition: all 0.5s;
+}
+.lef .lef-b .l-cen button:hover
+{
+      background-color: var(--sec-color);
+      color: var(--q-color);
+}
+.lef .lef-b .l-bot
+{
+      /* border: 2px solid; */
+      height: 36.5vh;
+      width: 400px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+}
+.lef .lef-b .l-bot i
+{
+      position: absolute;
+      border: 2px solid;
+      border-color: rgb(181, 179, 179);
+      border-radius: 5px;
+      color: rgb(181, 177, 177);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      width: 250px;
+      bottom: -35px;
+      left: -20px;
+      transform: rotate(-64deg);
+      transition: all ease 0.5s;
+}
+.lef .lef-b:hover i
+{
+  background-color: var(--sec-color);
+  border-color: var(--sec-color);
+  color: var(--q-color);
+}
+
+.rig
+{
+  /* border: 2px solid; */
+  display: flex;
+  flex-direction: column;
+  margin-right: 70px;
+  width: 50%;
+}                                  
+.rig .ri-t
+{
+  border-radius: 10px;
+  height: 93.3vh;
+  /* margin-top: 30px; */
+  background-color: gainsboro;
+} 
+.rig .ri-t .top
+{
+  border-bottom: 2px solid;
+  border-color: gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0px 40px;
+  padding: 20px 0px;
+}
+.rig .ri-t .top h1
+{
+  font-size: 30px;
+  color: var(--sec-color);
+  font-style: italic;
+  transition: all ease 0.5s;
+}
+.rig .ri-t:hover .top h1
+{
+  color: var(--primary-color);
+}
+.rig .ri-t .top button
+{
+  padding: 10px 25px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+  font-style: italic;
+  transition: all ease 0.5s;
+}
+.rig .ri-t:hover .top button
+{
+  background-color: var(--sec-color);
+}
+.rig .ri-t .cen
+{
+   display: flex;
+   flex-direction: column;
+   margin: 20px 40px ;
+}
+.rig .ri-t .cen p
+{
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: grey;
+}
+.rig .ri-t .cen button
+{
+      margin-top: 20px;
+      margin-left: 42%;
+      padding: 18px;
+      font-size: 20px;
+      font-style: italic;
+      width: 50%;
+      border-radius: 20px;
+      color: var(--q-color);
+      background-color:var(--primary-color);
+      transition: all ease 0.5s;
+}
+.rig .ri-t .cen button:hover
+{
+      background-color: var(--sec-color);
+      color: var(--q-color);
+}
+.rig .ri-t .bot
+{
+      /* border: 2px solid; */
+      height: 36.5vh;
+      width: 400px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+}
+.rig .ri-t .bot i
+{
+      position: absolute;
+      border: 2px solid;
+      border-radius: 5px;
+      border-color: rgb(181, 179, 179);
+      color: rgb(181, 177, 177);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      width: 250px;
+      bottom: -35px;
+      left: -20px;
+      transform: rotate(-64deg);
+      transition: all ease 0.5s;
+}
+.rig .ri-t:hover i
+{
+  background-color: var(--sec-color);
+  border-color: var(--sec-color);
+  color: var(--q-color);
+}
+
+.rig .ri-b
+{
+  border-radius: 10px;
+  height: 98.4vh;
+  margin-top: 20px;
+  background-color: gainsboro;
+} 
+.rig .ri-b .top
+{
+  border-bottom: 2px solid;
+  border-color: gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0px 40px;
+  padding: 20px 0px;
+}
+.rig .ri-b .top h1
+{
+  font-size: 30px;
+  color: var(--sec-color);
+  font-style: italic;
+  transition: all ease 0.5s;
+}
+.rig .ri-b:hover .top h1
+{
+  color: var(--primary-color);
+}
+.rig .ri-b .top button
+{
+  padding: 10px 25px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 15px;
+  font-style: italic;
+  transition: all ease 0.5s;
+}
+.rig .ri-b:hover .top button
+{
+  background-color: var(--sec-color);
+}
+.rig .ri-b .cen
+{
+   display: flex;
+   flex-direction: column;
+   margin: 20px 40px ;
+}
+.rig .ri-b .cen p
+{
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: grey;
+}
+.rig .ri-b .cen button
+{
+      margin-top: 20px;
+      margin-left: 42%;
+      padding: 18px;
+      font-size: 20px;
+      font-style: italic;
+      width: 50%;
+      border-radius: 20px;
+      color: var(--q-color);
+      background-color:var(--primary-color);
+      transition: all ease 0.5s;
+}
+.rig .ri-b .cen button:hover
+{
+      background-color: var(--sec-color);
+      color: var(--q-color);
+}
+.rig .ri-b .bot
+{
+      /* border: 2px solid; */
+      height: 36.5vh;
+      width: 400px;
+      font-size: 50px;
+      position: relative;
+      overflow: hidden;
+}
+.rig .ri-b .bot i
+{
+      position: absolute;
+      border: 2px solid;
+      border-radius: 5px;
+      border-color: rgb(181, 179, 179);
+      color: rgb(181, 177, 177);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30vh;
+      width: 250px;
+      bottom: -35px;
+      left: -20px;
+      transform: rotate(-64deg);
+      transition: all ease 0.5s;
+}
+.rig .ri-b:hover i
+{
+  background-color: var(--sec-color);
+  border-color: var(--sec-color);
+  color: var(--q-color);
+}
+/* -------------------------------------------------------------------------------------- */
+
+                 /* ----------------------projects---------------------- */
+.y
+{
+  margin: 100px 65px;
+  /* background-image: url(pic.jpg); */
+  height: 40vh;
+  border: 2px solid;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--primary-color);
+  color: var(--q-color);
+  transition: all ease 0.8s;
+}
+.y:hover
+{
+    background-color: var(--sec-color);
+}
+.y img
+{
+  height: 35vh;
+  margin: 12px 0px;
+  border-radius: 10px;
+}
+.y h1
+{
+    padding: 5px 15px;
+    font-style: italic;
+    font-size: 40px;
+    border: 2px solid;
+    margin: 70px 0px;
+    height: 15vh;
+    border-radius: 10px;
+    border-color: var(--sec-color);
+    background-color: var(--sec-color);
+    transition: all ease 0.8s;
+    animation: upward 2s infinite linear;
+}
+.y:hover h1
+{
+     background-color: var(--primary-color);
+     border-color: var(--primary-color);
+}
+@keyframes upward
+{
+  50%
+{
+  transform: translate(-50px);
+  /* transform: rotate('30deg'); */
+}
+}
+                 /*---------------------------- ---------------------- */
+.z
+{
+  border-radius: 20px;
+  display: flex;
+  gap: 20px;
+  margin: 0px 50px;
+  height: 100vh;
+  transition: all 0.5s;
+}
+.z:hover
+{
+  color: aliceblue;
+  background-color: whitesmoke;
+}
+.z .a{
+  border-radius: 15px;
+  height: 80vh;
+  width: 50%;
+  margin-top: 60px;
+  text-align: center;
+  font-style: oblique;
+  color: var(--sec-color);
+  background-color: gainsboro;
+  /* box-shadow: 5px 5px 5px 5px rgb(181, 177, 177); */
+  position: relative;
+  overflow: hidden;
+  transition: all ease 0.5s;
+  transform-origin: center;
+}
+.z .a p{
+  font-size: 20px;
+  margin-top: 10px; 
+}
+.z .a h1
+{
+  margin-top: 10px; 
+  font-size: 25px;
+}
+.z .a img
+{
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  margin-top: 60px;  
+  /* margin-left: 30px; */
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5px;
+  left:45px;
+  transform: rotate(60deg);
+  transition: all ease-in 0.5s;
+} 
+.z .a:hover img
+{
+  transform: rotate(0);
+  margin-bottom: 30px;
+  width: 70%;
+  /* transform: translateZ(20px); */
+  /* transform: translate(0px); */
+}
+.z .b{
+  border-radius: 15px;
+  margin-top: 60px;
+  height: 80vh;
+  width: 50%;
+  text-align: center;
+  font-style: oblique;
+  color: var(--sec-color);
+  background-color: gainsboro;
+  position: relative;
+  overflow: hidden;
+}
+.z .b p{
+  font-size: 20px;
+  margin-top: 10px; 
+
+} 
+.z .b h1
+{
+  margin-top: 10px; 
+  font-size: 25px;
+}
+.z .b img
+{
+  width: 100%;
+  height: 40vh;
+  position: absolute;
+  display: flex;
+  margin-top: 60px;  
+  /* margin-left: 30px; */
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5px;
+  left:45px;
+  transform: rotate(60deg);
+  transition: all ease-in 0.5s;
+} 
+.z .b:hover img
+{
+  transform: rotate(0);
+  margin-bottom: 30px;
+  width: 70%;
+  /* transform: translateZ(20px); */
+  /* transform: translate(0px); */
+}
+.z .c{
+  border-radius: 15px;
+  margin-top: 60px;
+  height: 80vh;
+  width: 50%;
+  text-align: center;
+  font-style: oblique;
+  color: var(--sec-color);
+  background-color: gainsboro;
+  position: relative;
+  overflow: hidden;
+}
+.z .c p{
+  font-size: 20px;
+  margin-top: 10px; 
+
+}
+.z .c h1
+{
+  margin-top: 10px; 
+  font-size: 30px;
+
+}
+.z .c img
+{
+  width: 100%;
+  height: 40vh;
+  position: absolute;
+  display: flex;
+  margin-top: 60px;  
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5px;
+  left:45px;
+  transform: rotate(60deg);
+  transition: all ease-in 0.5s;
+}
+.z .c:hover img
+{
+  transform: rotate(0);
+  margin-bottom: 30px;
+  width: 70%;
+  /* transform: translate(20px); */
+  /* transform: translate(0px); */
+}
+
+/* --------------------//////////////////-------------------------- */
+.footer
+{
+  height: 150vh;
+  /* background-color: whitesmoke; */
+  margin-top: 50px;
+}
+.footer .s
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  justify-content: space-around;
+  border-radius: 20px;
+  height: 45vh;
+  width: 60%;
+  background-color: var(--sec-color);
+  color: var(--q-color);
+  font-style: oblique;
+  font-size: 25px;
+  animation: up 2s infinite linear;
+}
+@keyframes up
+{
+   50%
+   {
+    transform:translate(30px)
+   }
+}
+.footer .s img
+{
+  height: 40vh;
+  width: 35%;
+  border-radius: 100%;
+}
+/* ================================================================================= */
+.footer .More
+{
+  display: flex;
+  gap: 20px;
+  /* border: 2px solid; */
+  margin: 70px 50px;
+}
+.More .more-left
+{
+  display: flex;
+  /* gap: 10px; */
+  /* border: 2px solid; */
+  width: 50%;
+}
+.More .more-left .Services
+{
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgb(202, 201, 201);
+  width: 50%;
+}
+.More .more-left .Services h3
+{
+  font-size: 20px;
+  font-style: italic;
+  color: var(--primary-color);
+}
+.More .more-left .Services a
+{
+  font-size: 15px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 60px;
+  padding: 5px 10px;
+  flex-direction: column;
+  color: gray;
+  border: 2px solid gainsboro;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+.More .more-left .Services a:hover
+{
+   background-color: var(--sec-color);
+   border-color: var(--sec-color);
+   color: var(--q-color);
+}
+.More .more-left .Services p
+{
+  font-size: 20px;
+  font-style: italic;
+  margin-top: 10px;
+  text-align: center;
+  color: var(--primary-color);
+}
+.More .more-left .Services i
+{
+  color: var(--q-color);
+  background-color: var(--sec-color);
+  border: 2px solid;
+  font-size: 22px;
+  height: 10vh;
+  width: 25%;
+  margin-top: 10px;
+  margin-left: 15px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+.More .more-left .Services i:hover
+{
+   background-color: var(--primary-color);
+}
+.More .more-left .abo
+{
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid; */
+  width: 50%;
+  margin-left: 20px;
+}
+.More .more-left .abo h4
+{
+  font-size: 20px;
+  font-style: italic;
+  color: var(--sec-color);
+  text-align: center;
+  /* margin-left: 5px; */
+}
+.More .more-left .abo p
+{
+  margin-left: 5px;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 15px;
+  text-align: center;
+  color: var(--primary-color);
+}
+.More .more-left .abo h3
+{
+  font-size: 20px;
+  font-style: italic;
+  color: var(--sec-color);
+  text-align: center;
+  /* margin-left: 5px; */
+  margin-top: 10px;
+}
+.More .more-left .abo a
+{
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  padding: 10px 0px;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 20px;
+  text-align: center;
+  /* margin-left: 50px; */
+  transition: all 0.5s;
+  color: gray;
+}
+.More .more-left .abo a:hover
+{
+  border-color: var(--sec-color);
+}
+.More .more-left .abo .c
+{
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 600;
+  margin-top: 15px;
+  text-align: center;
+  color: var(--sec-color);
+}
+.More .more-left .abo .n
+{
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 15px;
+  color: var(--primary-color);
+}
+.More .more-left .abo .p
+{
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 15px;
+  text-align: center;
+  color: var(--sec-color);
+}
+.More .more-left .abo .f
+{
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 18px;
+  text-align: center;
+  color: var(--primary-color);
+}
+.More .more-right
+{
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid; */
+  width: 50%;
+  gap: 10px;
+}
+.more-right .t input
+{
+  width: 40%;
+  border: 2px solid gainsboro;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-left: 22px;
+  font-style: italic;
+  transition: all 0.5s;
+}
+.more-right .t input:hover
+{
+  border-color: var(--primary-color);
+}
+.more-right .c h3 
+{
+   color: var(--sec-color); 
+   font-style: italic;
+   font-size: 20px;
+   margin-left: 30px;
+   margin-top: 25px;
+   width: 30%;
+   transition: all 0.5s;
+}
+.more-right .c h3:hover 
+{
+  background-color: var(--sec-color);
+  color: var(--q-color);
+  width: 30%;
+  padding: 15px 14px;
+  border-radius: 5px;
+}
+.more-right .c .link
+{
+  margin-top: 50px ;
+}
+.more-right .c a
+{
+  border: 2px solid;
+  border-radius: 5px;
+  margin-left: 30px;
+  padding: 5px 5px;
+  color: var(--primary-color);
+  transition: all 0.5s;
+}
+.more-right .c a:hover
+{
+    background-color: var(--primary-color);
+    color: var(--q-color);
+}
+.more-right .b input
+{
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 30vh;
+    width: 100%;
+    margin-top: 60px;
+    margin-left: 30px;
+    font-style: italic;
+    padding-left: 10px;
+    font-size: 16px;
+    transition: all 0.5s;
+}
+.more-right .b input:hover
+{
+     border-color: var(--primary-color);
+}
+.more-right button
+{
+  margin-top: 50px;
+  margin-left: 40%;
+  /* border: 2px solid; */
+  border-radius: 10px;
+  height: 10vh;
+  width: 30%;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--q-color);
+  background-color: var(--sec-color);
+  transition: all 0.5s ease;
+}
+.more-right button:hover
+{
+  /* transform: translate(-30px); */
+  transform: scale(1.2);
+  background-color: var(--primary-color);
+}
